@@ -28,5 +28,15 @@ echo "SQL Server is ready. Running cert.sql..."
 
 echo "Init complete. SQL Server is running."
 
+echo "Restoring backup..."
+/opt/mssql-tools18/bin/sqlcmd \
+    -S localhost \
+    -U sa \
+    -P "$MSSQL_SA_PASSWORD" \
+    -No \
+    -i /restore.sql
+
+echo "Backup has been restored"
+
 # Hand control back to sqlservr so the container stays alive
 wait $SQLSERVER_PID

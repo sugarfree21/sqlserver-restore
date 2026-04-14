@@ -25,7 +25,7 @@ BEGIN
     FROM FILE = '/var/opt/mssql/certs/certEncryption.cert'
     WITH PRIVATE KEY (
         FILE = '/var/opt/mssql/certs/certEncryption.pk',
-        DECRYPTION BY PASSWORD = '$(PLANET_DDS_PASSWORD)'
+        DECRYPTION BY PASSWORD = '$(DECRYPT_PASSWORD)'
     );
     PRINT 'Certificate certEncryption created.';
 END

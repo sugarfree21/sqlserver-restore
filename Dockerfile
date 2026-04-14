@@ -6,6 +6,7 @@ USER root
 
 # Copy init files
 COPY cert.sql /cert.sql
+COPY restore.sql /restore.sql
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
